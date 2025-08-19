@@ -1,0 +1,75 @@
+# 📘 Tutorial Instalare & Publicare RoLang
+
+## 🔹 1. Creează repository pe GitHub
+1. Intră pe https://github.com/new
+2. Numește repository-ul **RoLang** (sau cum vrei tu).
+3. Adaugă o descriere scurtă (ex. "RoLang - un limbaj de programare simplu ca Python, minimalist ca Lua").
+4. Lasă repository-ul **Public**.
+5. Click **Create Repository**.
+
+---
+
+## 🔹 2. Urcă proiectul din .zip
+1. Descarcă **RoLang-Official.zip** și dezarhivează-l pe PC.
+2. Deschide terminalul / Git Bash în folderul **RoLang-Official**.
+3. Rulează comenzile:
+
+```bash
+git init
+git branch -M main
+git add .
+git commit -m "Prima versiune oficiala RoLang"
+git remote add origin https://github.com/USERNAME/RoLang.git
+git push -u origin main
+```
+
+👉 Înlocuiește `USERNAME` cu username-ul tău de pe GitHub.
+
+---
+
+## 🔹 3. Instalare locală cu pip
+După ce l-ai urcat, clonează-l ca test:
+
+```bash
+git clone https://github.com/USERNAME/RoLang.git
+cd RoLang
+pip install .
+```
+
+Acum poți rula:
+```bash
+rolang
+```
+sau
+```bash
+rolang examples/hello.rol
+```
+
+---
+
+## 🔹 4. Publicare pe PyPI (Opțional)
+Dacă vrei ca alții să instaleze direct cu `pip install rolang`:
+
+1. Instalează unelte:
+```bash
+pip install build twine
+```
+
+2. Construiește pachetul:
+```bash
+python -m build
+```
+
+3. Urcă pe PyPI:
+```bash
+twine upload dist/*
+```
+
+Apoi, oricine poate instala cu:
+```bash
+pip install rolang
+```
+
+---
+
+✅ Gata! Acum ai propriul limbaj de programare publicat pe GitHub și opțional pe PyPI!
